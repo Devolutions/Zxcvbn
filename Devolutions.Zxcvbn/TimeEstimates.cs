@@ -9,7 +9,7 @@
 
         public string[] CrackTimesDisplay { get; private set; }
 
-        public double Score { get; private set; }
+        public int Score { get; private set; }
 
         private TimeEstimates()
         {

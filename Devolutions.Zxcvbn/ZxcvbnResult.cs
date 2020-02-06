@@ -23,7 +23,7 @@ namespace Devolutions.Zxcvbn
 
         public string OfflineFastHashManyCoresCrackTime { get; internal set; }
 
-        public double Score { get; internal set; }
+        public int Score { get; internal set; }
 
         public Feedback Feedback { get; internal set; }
 
