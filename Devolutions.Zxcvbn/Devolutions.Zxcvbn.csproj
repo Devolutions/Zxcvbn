@@ -3,6 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>8.0</LangVersion>
+    <Authors>Devolutions</Authors>
+    <Description>Port of Dropbox's Zxcvbn in C#</Description>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <Copyright>Copyright (c) 2020 Devolutions</Copyright>
+    <RepositoryUrl>https://github.com/Devolutions/Zxcvbn</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Devolutions/Zxcvbn</PackageProjectUrl>
+    <PackageTags>zxcvbn password strength dropbox devolutions</PackageTags>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +22,10 @@
     <None Remove="Resources\FrequencyList\Passwords.txt" />
     <None Remove="Resources\FrequencyList\Surnames.txt" />
     <None Remove="Resources\FrequencyList\UsTvAndFilm.txt" />
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
