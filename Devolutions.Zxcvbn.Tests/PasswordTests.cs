@@ -638,9 +638,9 @@ namespace Devolutions.Zxcvbn.Tests
         [TestMethod]
         public void WhyfaultthebardifhesingstheArgivesharshfate()
         {
-            ZxcvbnResult result = Zxcvbn.Evaluate("WhyfaultthebardifhesingstheArgives�harshfate?");
+            ZxcvbnResult result = Zxcvbn.Evaluate("WhyfaultthebardifhesingstheArgives’harshfate?");
 
-            Assert.AreEqual("WhyfaultthebardifhesingstheArgives�harshfate?", result.Password);
+            Assert.AreEqual("WhyfaultthebardifhesingstheArgives’harshfate?", result.Password);
             Assert.AreEqual(40.754463d, result.GuessesLog10, 0.01d);
             Assert.AreEqual(4, result.Score);
 
@@ -656,9 +656,9 @@ namespace Devolutions.Zxcvbn.Tests
         [TestMethod]
         public void EupithessonAntinousbroketheirsilence()
         {
-            ZxcvbnResult result = Zxcvbn.Evaluate("Eupithes�sonAntinousbroketheirsilence");
+            ZxcvbnResult result = Zxcvbn.Evaluate("Eupithes’sonAntinousbroketheirsilence");
 
-            Assert.AreEqual("Eupithes�sonAntinousbroketheirsilence", result.Password);
+            Assert.AreEqual("Eupithes’sonAntinousbroketheirsilence", result.Password);
             Assert.AreEqual(29.048d, result.GuessesLog10, 0.01d);
             Assert.AreEqual(4, result.Score);
 
@@ -764,9 +764,9 @@ namespace Devolutions.Zxcvbn.Tests
         [TestMethod]
         public void _()
         {
-            ZxcvbnResult result = Zxcvbn.Evaluate("!\"�$%^&*()");
+            ZxcvbnResult result = Zxcvbn.Evaluate("!\"£$%^&*()");
 
-            Assert.AreEqual("!\"�$%^&*()", result.Password);
+            Assert.AreEqual("!\"£$%^&*()", result.Password);
             Assert.AreEqual(7.0161138d, result.GuessesLog10, 0.01d);
             Assert.AreEqual(2, result.Score);
 
