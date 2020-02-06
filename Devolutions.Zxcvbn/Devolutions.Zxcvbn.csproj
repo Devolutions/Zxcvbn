@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\FrequencyList\EnglishWikipedia.txt" />
+    <None Remove="Resources\FrequencyList\FemaleNames.txt" />
+    <None Remove="Resources\FrequencyList\MaleNames.txt" />
+    <None Remove="Resources\FrequencyList\Passwords.txt" />
+    <None Remove="Resources\FrequencyList\Surnames.txt" />
+    <None Remove="Resources\FrequencyList\UsTvAndFilm.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\FrequencyList\EnglishWikipedia.txt" />
+    <EmbeddedResource Include="Resources\FrequencyList\FemaleNames.txt" />
+    <EmbeddedResource Include="Resources\FrequencyList\MaleNames.txt" />
+    <EmbeddedResource Include="Resources\FrequencyList\Passwords.txt" />
+    <EmbeddedResource Include="Resources\FrequencyList\Surnames.txt" />
+    <EmbeddedResource Include="Resources\FrequencyList\UsTvAndFilm.txt" />
+  </ItemGroup>
+
+</Project>
