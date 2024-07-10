@@ -1,0 +1,53 @@
+name: push package
+
+on:
+  release:
+    types: published
+  workflow_dispatch:
+    inputs:
+      publish: # for dry-run if set to false
+        default: true
+        description: Publish packages to Artifactory
+        required: true
+        type: boolean
+      version:
+        description: Overrides the project version value
+        required: false
+
+jobs:
+  push:
+    runs-on: windows-2022
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Setup Artifactory
+        uses: devolutions/actions/nuget-artifactory-setup@v1
+        with:
+          artifactory_password: ${{ secrets.ARTIFACTORY_PASSWORD }}
+          artifactory_username: ${{ secrets.ARTIFACTORY_USERNAME }}
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      - name: Pack
+        uses: devolutions/actions/dotnet-pack@v1
+        with:
+          output_path: release
+          version: ${{ github.event_name == 'release' && github.ref_name || inputs.version }}
+
+      - name: Push
+        if: ${{ github.event_name == 'release' && true || inputs.publish }}
+        uses: devolutions/actions/dotnet-push@v1
+        with:
+          working_directory: release
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: release
