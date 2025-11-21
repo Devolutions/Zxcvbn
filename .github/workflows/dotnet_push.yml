@@ -32,7 +32,7 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          key: ${{ runner.os }}-nuget-${{ hashFiles('Devolutions.Zxcvbn/packages.lock.json', 'Devolutions.Zxcvbn.Tests/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
 
